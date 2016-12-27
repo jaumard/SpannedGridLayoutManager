@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public SpanInfo getSpanInfo(int position) {
                 SpanInfo spanInfo = new SpanInfo(1, 1);
-                if (data.get(position) == 8 || data.get(position) == 2) {
+                if (data.get(position) == 1 || data.get(position) == 4) {
                     spanInfo.columnSpan = 2;
                     spanInfo.rowSpan = 2;
-                } else if (data.get(position) == 5) {
+                } else if (data.get(position) == 0) {
                     spanInfo.columnSpan = 2;
                 } else if (data.get(position) == 3) {
                     spanInfo.rowSpan = 2;
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
                 return spanInfo;
             }
-        }, 2, 1f);
+        }, 2, 1f); //FIXME Toggle between 2 and 5, 2 will make crash on scroll and 5 will show overlapping
 
         recyclerView.setLayoutManager(gridLayoutManager);
 
